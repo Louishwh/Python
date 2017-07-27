@@ -11,9 +11,12 @@ def run_game():
 	# 初始化 并创建屏幕 
 	pygame.init()
 
+	print("Game is running...")
+
 	g_setting = Settings()
 
 	screen = pygame.display.set_mode((g_setting.screen_width,g_setting.screen_height))
+
 	pygame.display.set_caption("Alien Invasion")
 
 	ship = Ship(g_setting,screen)

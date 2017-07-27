@@ -9,7 +9,7 @@ class Settings(object):
 		self.bg_color = (230,230,230)
 
 		# 飞船参数
-		self.ship_speed_facter = 2;
+		self.ship_speed_facter = 5;
 		
 		#子弹参数
 		self.bullet_speed_facter = 1;

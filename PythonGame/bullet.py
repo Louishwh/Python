@@ -10,18 +10,17 @@ class Bullet(Sprite):
 
 		# 创建一颗子弹
 		self.rect = pygame.Rect(0,0,setting.bullet_width,setting.bullet_height)
-		self.rect.centerx = ship.rect.centerx
-		self.rect.top = ship.rect.top
+		self.rect.centerx = ship.image_rect.centerx
+		self.rect.top = ship.image_rect.top
 		
 		# 存储 子弹的位置
 		self.y = float(self.rect.y)
 
 		self.color = setting.bullet_color
-		self.speed_factor = setting.bullet_speed_acter
+		self.speed_factor = setting.bullet_speed_facter
 
 	def update(self):
-		self.y -= self.y
-
+		self.y -= self.speed_factor
 		self.rect.y = self.y
 
 
