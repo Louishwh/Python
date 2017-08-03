@@ -12,7 +12,7 @@ class Settings(object):
 		self.ship_speed_facter = 5;
 		
 		#子弹参数
-		self.bullet_speed_facter = 1;
+		self.bullet_speed_facter = 10;
 		self.bullet_width = 3
 		self.bullet_height = 10
 		self.bullet_color = (60,60,60)
