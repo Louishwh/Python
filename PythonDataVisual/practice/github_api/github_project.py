@@ -17,18 +17,21 @@ response_dicts = []
 name,starcount,urls = [],[],[]
 
 for index,language in enumerate(languages):
-	name,starcount,urls = [],[],[]
 	response = requests.get(target_place+language+sorted_type)
 	response_dicts.append(response.json())
+	name,starcount,urls = [],[],[]
 	try:
 		count = float(response_dicts[index]['total_count'])/10000
 		items= response_dicts[index]['items']
+
+
 		print(language+" count in github: "+str(count)+"w")
 		
 		for item in items:
 			name.append(item['name'])
 			starcount.append(item['stargazers_count'])
 			urls.append(item['clone_url'])
+
 
 		graphing(languages[index],name,starcount)
 		os.popen('open -a Chrome '+language+"_repos.svg")

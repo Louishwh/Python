@@ -5,7 +5,19 @@ import pygal
 def graphing(language,projectnames,stars):
 	# style = LS('1199bb',base_style=LCS)
 	# chart = pygal.Bar(style=style,x_label_rotation=45,show_legend=False)
-	chart = pygal.Bar(x_label_rotation=35,show_legend=False)
+	# 
+	my_config = pygal.Config()
+	my_config.x_label_rotation = 45
+	my_config.show_legend = False
+	my_config.title_font_size = 24
+	my_config.label_font_size = 14
+	my_config.major_label_font_size = 18
+	my_config.truncate_label = 15
+	my_config.show_y_guides = False
+	my_config.width = 1000
+
+	# 
+	chart = pygal.Bar(my_config,show_legend=False)
 	chart.title = 'Most-started '+language+' Projects On Github '
 	chart.x_labels = projectnames
 	chart.add('',stars)
